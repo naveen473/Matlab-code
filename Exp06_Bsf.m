@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+fc1=input('Enter cut-off freq 1:');
+fc2=input('Enter cut-off freq 2:');
+fc=[fc1 fc2];
+fs=input('Enter sampling freq :');
+M=input('Enter Order:');
+[b,a]=fir1(M-1,(2*fc/fs),'stop',hanning(M));
+freqz(b,a);
+title('FIR bandstop Filter using Hanning Window');

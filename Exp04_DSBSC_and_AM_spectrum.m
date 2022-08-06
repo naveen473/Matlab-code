@@ -1,0 +1,23 @@
+clc;
+clear all;
+close all;
+fs=input('enter the spectrum rate ');
+n=0:fs-1;
+N=fs;
+x=cos(2*10*pi*n/fs);
+c=5*cos(2*50*pi*n/fs);
+s=(x.*c);
+sf=fft(s,N);
+subplot(2,1,1);
+stem(n,abs(sf));
+xlabel('n');
+ylabel('s[n]');
+title('DSBSC spectrum');
+s1=(x.*c)+c;
+s1f=fft(s1,N);
+subplot(2,1,2);
+stem(n,abs(s1f));
+xlabel('n');
+ylabel('sl[n]');
+title('AM spectrum');
+

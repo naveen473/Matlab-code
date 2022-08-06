@@ -1,0 +1,12 @@
+clc;
+close all;
+clear all;
+fs=input('enter the spectrum rate');
+n=0:1/fs:10;
+N=fs;
+x=cos(200*pi*(n))+sin(300*pi*(n))+cos(100*pi*(n));
+xf=fft(x,N);
+k=0:N-1;
+stem(k,abs(xf));
+xlabel('k');
+ylabel('Dft');
